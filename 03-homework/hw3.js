@@ -77,9 +77,10 @@ while(flag){
         temp = prompt(`Input name: `);
     }
 }
+flag = true;
 console.log(userName);
 
-function correctName(name){
+function fixName(name){
     let res="";
     for(let i = 0;i<name.length;i++){
         if(i===0){
@@ -90,7 +91,102 @@ function correctName(name){
     }
     return res;
 }
-let correctedName = correctName(userName);
-console.log(correctedName);
+let fixedName = fixName(userName);
+console.log(fixedName);
 
+function calcTrueSalary(salary){
+    const TAX = 19.5;
+    let coef = (100-TAX)/100;
+    let result = salary*coef;
+    return result;
+}
+let userSalary = prompt("Input a salary: ");
+while(flag){
+    if(userSalary!==""&&isNaN(+(userSalary))!==true&&+(userSalary)>=0){
+        userSalary=+(userSalary);
+        flag = false;
+    }else{
+        alert("incorrect data!")
+        userSalary = prompt("Input a salary: ");
+    }
+}
+let trueSalary = calcTrueSalary(userSalary);
+console.log(trueSalary);
 
+function getRandomNumber(n,m){
+    let random = Math.floor(n+Math.random()*((m+1)-n))
+    return random;
+}
+let numberN = prompt("Input number N (integer): ");
+let numberM = prompt("Input number M (integer): ");
+flag = true;
+while(flag){
+    if(numberN!==""&&numberM!==""&&isNaN(+(numberN))!==true&&isNaN(+(numberM))!==true&&+(numberM)%1===0&&+(numberN)%1===0&&+(numberM)>+(numberN)){
+        numberM=+(numberM);
+        numberN=+(numberN);
+        flag = false;
+    }else{
+        alert("incorrect data!");
+        numberN = prompt("Input number N (integer): ");
+        numberM = prompt("Input number M (integer): ");
+    }
+}
+let randomNumber = getRandomNumber(numberN,numberM);
+console.log(randomNumber);
+flag = true;
+
+function countLetter(letter,word){
+    let counter = 0;
+    for(let i =0;i<word.length;i++) if(word[i].toLowerCase()===letter.toLowerCase()) counter++;
+    return counter;
+}
+temp = prompt(`Input word: `);
+let userWord = ``;
+while(flag){
+    if(temp!==''){
+        for(let i = 0;i<temp.length;i++){
+            if(temp[i]>= 'а' && temp[i] <= 'я' || temp[i] >= 'А' && temp[i] <= 'Я'||temp[i]>='a'&&temp[i]<='z'||temp[i]>='A'&&temp[i]<='Z'){
+                userWord+=temp[i];
+                flag = false;
+            }else{
+                alert("Not a word!");
+                userWord = ``;
+                temp = prompt(`Input word: `);
+            }
+        }
+    }else{
+        alert("Not a word!");
+        temp = prompt(`Input word: `);
+    }
+}
+flag = true;
+console.log(userWord);
+
+temp = prompt(`Input letter: `);
+let userLetter = ``;
+while(flag){
+    if(temp!==''&&temp.length<2){
+        for(let i = 0;i<temp.length;i++){
+            if(temp[i]>= 'а' && temp[i] <= 'я' || temp[i] >= 'А' && temp[i] <= 'Я'||temp[i]>='a'&&temp[i]<='z'||temp[i]>='A'&&temp[i]<='Z'){
+                userLetter+=temp[i];
+                flag = false;
+            }else{
+                alert("Not a letter!");
+                userLetter = ``;
+                temp = prompt(`Input letter: `);
+            }
+        }
+    }else{
+        alert("Not requisite length!");
+        temp = prompt(`Input letter: `);
+    }
+}
+flag = true;
+console.log(userLetter);
+
+let amount = countLetter(userLetter,userWord);
+console.log(amount);
+
+function convertCurrency(money){
+    
+}
