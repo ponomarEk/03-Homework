@@ -106,16 +106,16 @@ function deleteDuplicateLetters(text){
     return update;
 }
 
-document.writeln(`Найбыльша цифра числа: ${getMaxDigit(1943)}<br>`);
-document.writeln(`Піднесення числа в степінь:${getNumberGrade(25,2)}<br> `);
-document.writeln(`Виправлення імені:${fixName("oleXanDR")}<br> `);
-document.writeln(`Вичислення залишку зарплати після оплати податку:${calcTrueSalary(1000)}<br> `);
-document.writeln(`Випадкове число від N до M:${getRandomNumber(13,25)}<br> `);
-document.writeln(`Кількість літери в слові:${countLetter('a',"AstalavistA")}<br> `);
-document.writeln(`Конвертація грошових одиниць (з '$' в 'грн'):${convertCurrency("10$")}<br> `);
-document.writeln(`Конвертація грошових одиниць (з 'грн' в '$'):${convertCurrency("2500UaH")}<br> `);
-document.writeln(`Конвертація грошових одиниць (з якоїсь іншої грошової валюти):${convertCurrency("1234rub")}<br> `);
+document.writeln(`Найбыльша цифра числа, вхідні дані(1943): ${getMaxDigit(1943)}<br>`);
+document.writeln(`Піднесення числа в степінь, вхідні дані(25,2):${getNumberGrade(25,2)}<br> `);
+document.writeln(`Виправлення імені, вхідні дані("oleXanDR"):${fixName("oleXanDR")}<br> `);
+document.writeln(`Вичислення залишку зарплати після оплати податку, вхідні дані(1000):${calcTrueSalary(1000)}<br> `);
+document.writeln(`Випадкове число від N до M, вхідні дані(13,25):${getRandomNumber(13,25)}<br> `);
+document.writeln(`Кількість літери в слові, вхідні дані('a',"AstalavistA"):${countLetter('a',"AstalavistA")}<br> `);
+document.writeln(`Конвертація грошових одиниць (з '$' в 'грн'), вхідні дані("10$"):${convertCurrency("10$")}<br> `);
+document.writeln(`Конвертація грошових одиниць (з 'грн' в '$'), вхідні дані("2500UaH"):${convertCurrency("2500UaH")}<br> `);
+document.writeln(`Конвертація грошових одиниць (з якоїсь іншої грошової валюти), вхідні дані("1234rub"):${convertCurrency("1234rub")}<br> `);
 document.writeln(`Рандомний пароль: ${randomPassword}<br>`);
-document.writeln(`Видалення букви з слова: ${deleteLetters("blablaabla Arteon","a")}<br> `);
-document.writeln(`Перевірка на паліндром: ${isPalyndrom("Аргентина манит негра")}<br> `);
-document.writeln(`Видалення букв, які зустрічаються більше, ніж 1 раз: ${deleteDuplicateLetters("Бисквит был очень нежный")}<br>`);
+document.writeln(`Видалення букви з слова, вхідні дані("blablaabla Arteon","a"): ${deleteLetters("blablaabla Arteon","a")}<br> `);
+document.writeln(`Перевірка на паліндром, вхідні дані("Аргентина манит негра"): ${isPalyndrom("Аргентина манит негра")}<br> `);
+document.writeln(`Видалення букв, які зустрічаються більше, ніж 1 раз, вхідні дані("Бисквит был очень нежный"): ${deleteDuplicateLetters("Бисквит был очень нежный")}<br>`);
