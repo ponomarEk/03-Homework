@@ -22,8 +22,8 @@ function fixName(name){
 
 function calcTrueSalary(salary){
     const TAX = 19.5;
-    let coef = (100-TAX)/100;
-    let result = salary*coef;
+    const COEF = (100-TAX)/100;
+    let result = salary*COEF;
     return result;
 }
 
@@ -46,7 +46,7 @@ function convertCurrency(money){
     }else if(money.toLowerCase().search("uah")!==-1){
         cash=parseFloat(money)/25;
         return(cash+" $");
-    }else return "can not be converted!";
+    }else return " Can not be converted!";
 }
 
 function getRandomPassword(size=8){
@@ -63,6 +63,29 @@ if(userSize===""||isNaN(+userSize)||(+userSize)%1!==0||(+userSize)<1){
     userSize=+userSize;
     randomPassword=getRandomPassword(userSize);
     console.log(`You chose ${userSize}-digits password`);
+}
+
+function deleteLetters(text,letter){
+    letter=letter.toLowerCase();
+    text=text.toLowerCase();
+    let updatedText=``;
+    for(let i =0;i<text.length;i++)if(text[i]!==letter)updatedText+=text[i];
+    return updatedText;
+}
+
+function isPalyndrom(testText){
+    testText=testText.toLowerCase();
+    let bool;
+    let updatedText=``;
+    for(let i =0;i<testText.length;i++)if(testText[i]!==" ")updatedText+=testText[i];
+    for(let i = 0;i<updatedText.length/2;i++){
+        if(updatedText[i]===updatedText[(updatedText.length-1)-i])bool=true;
+        else{
+            bool=false;
+            break;
+        }
+    }
+    return bool;
 }
 
 function deleteDuplicateLetters(text){
@@ -93,6 +116,6 @@ document.writeln(`Конвертація грошових одиниць (з '$'
 document.writeln(`Конвертація грошових одиниць (з 'грн' в '$'):${convertCurrency("2500UaH")}<br> `);
 document.writeln(`Конвертація грошових одиниць (з якоїсь іншої грошової валюти):${convertCurrency("1234rub")}<br> `);
 document.writeln(`Рандомний пароль: ${randomPassword}<br>`);
-document.writeln(`Видалення букви з слова:<br> `);
-document.writeln(`Перевірка на паліндром:<br> `);
+document.writeln(`Видалення букви з слова: ${deleteLetters("blablaabla Arteon","a")}<br> `);
+document.writeln(`Перевірка на паліндром: ${isPalyndrom("Аргентина манит негра")}<br> `);
 document.writeln(`Видалення букв, які зустрічаються більше, ніж 1 раз: ${deleteDuplicateLetters("Бисквит был очень нежный")}<br>`);
